@@ -17,9 +17,15 @@ import static org.junit.Assert.assertThat;
  */
 public class EvenMoreSophisticatedTest {
 
+    /**
+     * Returns string matcher checking if given string has given length
+     *
+     * @param length length to be checked
+     * @return string matcher checking for given string length
+     */
     public static Matcher<String> hasLength(final int length) {
+        //We return type safe matcher that complies to java 1.5 generics
         return new CustomTypeSafeMatcher<String>("has length " + length) {
-
             @Override
             protected boolean matchesSafely(String s) {
                 return s.length() == length;
@@ -31,8 +37,11 @@ public class EvenMoreSophisticatedTest {
     public void useCustomLengthMatcher() {
         String tenDigits = "1234567890";
 
-        //you can check if the string matches your custom matcher
-        //plain English: you can check if tenDigits has length 10
+        /**
+         * You can check if the string matches your custom matcher
+         *
+         * plain English: you can check if "tenDigits" has length 10
+         */
         assertThat(tenDigits, hasLength(10));
     }
 

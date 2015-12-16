@@ -8,7 +8,7 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by U534102 on 2015-12-15.
  * <p>
- * Testing few parameters achieved with assertions in loop
+ *     Here we're trying to test one method with different input using Object[][] table and loop
  */
 public class CalculatorWithArrayAndLoopTest {
 
@@ -19,7 +19,7 @@ public class CalculatorWithArrayAndLoopTest {
                 {2, 3, 5} //2 + 3 = 5
         };
 
-        //Test should have cyclomatic complexity equal to 1!
+        //Why is this wrong? How this can be improved?
         for (Object[] testParameters : parameters) {
             int addend1 = (Integer) testParameters[0];
             int addend2 = (Integer) testParameters[1];

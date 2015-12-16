@@ -17,15 +17,15 @@ public class BasicTest {
     public void equalityTest() {
         String actual = "someString";
 
-        //equality checks with basic assertions
+        //object equality checks with basic junit assertions
         assertTrue("someString".equals(actual));
         assertEquals("someString", actual);
 
-        //un-equality checks with basic assertions
+        //object un-equality checks with basic junit assertions
         assertFalse("someOtherString".equals(actual));
         assertNotEquals("someOtherString", actual);
 
-        //same with hamcrest
+        //same done with hamcrest assertions
         assertThat(actual, is("someString"));
         assertThat(actual, is(not("someOtherString")));
 

@@ -40,7 +40,7 @@ public class MoreSophisticatedTest {
         assertThat(carString, both(containsString("4 wheels")).and(containsString("engine")));
 
         //but unfortunately this is String after all, not any Car object
-        assertThat(carString, both(isA(String.class)).and(not(instanceOf(Car.class))));
+        assertThat(carString, both(isA(String.class)).and(is(not(instanceOf(Car.class)))));
     }
 
     class Car {
