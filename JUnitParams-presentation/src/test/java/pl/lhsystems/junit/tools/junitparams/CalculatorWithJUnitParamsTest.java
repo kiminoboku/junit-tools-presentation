@@ -18,9 +18,9 @@ public class CalculatorWithJUnitParamsTest {
 
 
     /**
-     * The {@code @Parameters} annotation can define all the input parameters needed by the test method. We only need
-     * to define the method arguments and everything works! Type conversion from String to int is done automatically
-     * (as well as splitting the arguments with comma).
+     * The {@code @Parameters} annotation can define all the input parameters needed by the test method. We only need to
+     * define the method arguments and everything works! Type conversion from String to int is done automatically (as
+     * well as splitting the arguments with comma).
      *
      * @param addend1     first addend
      * @param addend2     second addend

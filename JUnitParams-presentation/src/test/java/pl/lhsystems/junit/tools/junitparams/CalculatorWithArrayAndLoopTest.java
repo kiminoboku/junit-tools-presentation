@@ -8,7 +8,7 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by U534102 on 2015-12-15.
  * <p>
- *     Here we're trying to test one method with different input using Object[][] table and loop
+ * Here we're trying to test one method with different input using Object[][] table and loop
  */
 public class CalculatorWithArrayAndLoopTest {
 

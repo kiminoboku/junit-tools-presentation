@@ -27,7 +27,8 @@ public class MoreSophisticatedTest {
         assertThat(carString, endsWith("trunk"));
 
         //on the other hand you can check all conditions at once
-        assertThat(carString, allOf(startsWith("hood"), containsString("engine"), containsString("4 wheels"), endsWith("trunk")));
+        assertThat(carString, allOf(startsWith("hood"), containsString("engine"), containsString("4 wheels"),
+                endsWith("trunk")));
 
         //sometimes car ends either with truck or a trailer
         assertThat(carString, anyOf(endsWith("trunk"), endsWith("trailer")));

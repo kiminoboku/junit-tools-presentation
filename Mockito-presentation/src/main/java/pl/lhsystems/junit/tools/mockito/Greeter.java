@@ -1,8 +1,8 @@
 package pl.lhsystems.junit.tools.mockito;
 
 /**
- * Created by U534102 on 2015-12-17.
- * An object producing greeting message depending of application language provided from AppConfiguration object
+ * Created by U534102 on 2015-12-17. An object producing greeting message depending of application language provided
+ * from AppConfiguration object
  */
 public class Greeter {
 
