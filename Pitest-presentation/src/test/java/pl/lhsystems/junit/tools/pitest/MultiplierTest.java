@@ -4,7 +4,6 @@ import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import pl.lhsystems.junit.tools.pitest.Multiplier;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
