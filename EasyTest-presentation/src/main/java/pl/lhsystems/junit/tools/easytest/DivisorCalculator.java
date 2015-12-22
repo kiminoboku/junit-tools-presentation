@@ -4,6 +4,7 @@ import java.math.BigInteger;
 
 /**
  * Created by U534102 on 2015-12-18.
+ * Object responsible for calculating greatest common divisor for two given numbers
  */
 public class DivisorCalculator {
 

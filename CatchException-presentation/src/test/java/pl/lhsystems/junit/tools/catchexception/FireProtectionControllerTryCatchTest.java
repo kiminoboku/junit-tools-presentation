@@ -30,12 +30,14 @@ public class FireProtectionControllerTryCatchTest {
 
     @Test
     public void checkForFireShouldThrowFireExceptionWhenSmokeDetectorThrowsException() {
+        //make sure that collaborator throws an exception
         when(smokeDetector.checkForSmoke()).thenThrow(new IllegalStateException());
 
         try {
             systemUnderTest.checkForFire();
             fail("Missing exception");
         } catch (Exception e) {
+            //verify
             assertThat(e, is(instanceOf(FireException.class)));
         }
     }

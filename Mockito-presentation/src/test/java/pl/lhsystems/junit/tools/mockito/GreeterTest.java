@@ -13,6 +13,8 @@ import static org.mockito.Mockito.when;
 
 /**
  * Created by U534102 on 2015-12-17.
+ *
+ * Test class presenting most basic Mockito features
  */
 @RunWith(MockitoJUnitRunner.class)
 public class GreeterTest {

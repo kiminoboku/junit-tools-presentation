@@ -12,7 +12,9 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /**
- * Created by U534102 on 2015-12-22. Here we are testing FireProtectionController using JUnit "expected" feature
+ * Created by U534102 on 2015-12-22.
+ *
+ * Here we are testing FireProtectionController using JUnit "expected" feature
  */
 @RunWith(MockitoJUnitRunner.class)
 public class FireProtectionControllerExpectedExceptionTest {
@@ -46,7 +48,7 @@ public class FireProtectionControllerExpectedExceptionTest {
     }
 
     /**
-     * We cannot make any post-thrown verifications out of the box using JUnit "expected exception". Because of that we
+     * We cannot make any post-throw verifications out of the box using JUnit "expected exception". Because of that we
      * have to use plain old try-catch here.
      */
     @Test

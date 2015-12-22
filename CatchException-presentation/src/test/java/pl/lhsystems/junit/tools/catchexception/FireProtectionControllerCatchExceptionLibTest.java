@@ -14,7 +14,9 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /**
- * Created by U534102 on 2015-12-22. Here we are testing FireProtectionController using catch-exception library
+ * Created by U534102 on 2015-12-22.
+ * <p>
+ * Here we are testing FireProtectionController using catch-exception library
  */
 @RunWith(MockitoJUnitRunner.class)
 public class FireProtectionControllerCatchExceptionLibTest {
@@ -44,6 +46,11 @@ public class FireProtectionControllerCatchExceptionLibTest {
         assertThat(caughtException(), is(instanceOf(FireException.class)));
     }
 
+    /**
+     * The caughtException() just returns an object we can actually make any assertion on it that we wish to
+     *
+     * @throws FireException
+     */
     @Test
     public void checkForFireShouldThrowFireExceptionWithProperMessage() throws FireException {
         when(smokeDetector.checkForSmoke()).thenThrow(new IllegalStateException());
@@ -54,6 +61,12 @@ public class FireProtectionControllerCatchExceptionLibTest {
         assertThat(caughtException().getMessage(), is("Fire!"));
     }
 
+    /**
+     * Since catchException() creates a proxy object which will never throw exception at a higher level (and possibly
+     * leading to test failure/error) we can safely do post-throw verifications here
+     *
+     * @throws FireException
+     */
     @Test
     public void checkForFireShouldEnableFireExtinguisherWhenSmokeDetectorThrowsException() throws FireException {
         when(smokeDetector.checkForSmoke()).thenThrow(new IllegalStateException());

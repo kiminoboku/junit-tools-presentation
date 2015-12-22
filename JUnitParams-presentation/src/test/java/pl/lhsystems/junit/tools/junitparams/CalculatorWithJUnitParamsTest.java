@@ -27,7 +27,7 @@ public class CalculatorWithJUnitParamsTest {
      * @param expectedSum expected sum of addends
      */
     @Test
-    @Parameters({"1, 2, 3", "2, 3, 5"})
+    @Parameters({"1, 2, 3", "2|3|5"})
     public void addShouldReturnSumOfBothAddends(int addend1, int addend2, int expectedSum) {
         Calculator systemUnderTest = new Calculator();
 

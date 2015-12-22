@@ -2,6 +2,7 @@ package pl.lhsystems.junit.tools.catchexception;
 
 /**
  * Created by U534102 on 2015-12-22.
+ * Object responsible for checking for smoke and enabling the extinguisher in case of smoke detected.
  */
 public class FireProtectionController {
 

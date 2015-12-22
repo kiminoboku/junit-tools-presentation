@@ -25,7 +25,7 @@ public class AbsoluteValueCounterTest {
     }
 
     @Test
-    @Parameters({"-1, 1", "-2, 2", "-3, 3", "-4, 4", "-5, 5"})
+    @Parameters({"-1|1", "-2|2", "-3|3", "-4|4", "-5|5"})
     public void getAbsoluteValueShouldReturnPositiveNumberWhenInputIsNegative(int anyNegativeValue, int expectedResult) {
         int result = systemUnderTest.getAbsoluteValue(anyNegativeValue);
 

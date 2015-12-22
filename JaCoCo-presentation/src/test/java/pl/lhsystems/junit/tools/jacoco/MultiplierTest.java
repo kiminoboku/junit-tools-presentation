@@ -18,7 +18,7 @@ public class MultiplierTest {
 
 
     @Test
-    @Parameters({"1, 1, 1", "1, 2, 2", "2, 3, 6", "2, 5, 10", "2, 7, 14", "2, 11, 22", "11, 2, 22"})
+    @Parameters({"1|1|1", "1|2|2", "2|3|6", "2|5|10", "2|7|14", "2|11|22", "11|2|22"})
     public void multiplyShouldReturnMultiplication(int n1, int n2, int expectedResult) {
         int result = systemUnderTest.multiply(n1, n2);
 
@@ -34,7 +34,7 @@ public class MultiplierTest {
     }
 
     @Test
-    //@Ignore
+//    @Ignore
     public void getInvocationCountShouldReturnIncreasedValue() {
         int anyNumber = 1;
 

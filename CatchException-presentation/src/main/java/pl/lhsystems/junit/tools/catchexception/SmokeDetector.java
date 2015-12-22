@@ -2,6 +2,7 @@ package pl.lhsystems.junit.tools.catchexception;
 
 /**
  * Created by U534102 on 2015-12-22.
+ * Dummy implementation of smoke detector
  */
 public class SmokeDetector {
     /**
@@ -9,6 +10,6 @@ public class SmokeDetector {
      * @throws IllegalStateException when there is smoke in the room
      */
     public boolean checkForSmoke() {
-        return false;
+        return false; //by default no smoke detected
     }
 }

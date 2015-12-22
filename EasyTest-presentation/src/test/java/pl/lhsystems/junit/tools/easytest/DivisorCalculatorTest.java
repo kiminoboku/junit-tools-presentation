@@ -11,7 +11,9 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 /**
- * Created by U534102 on 2015-12-18. Testing with input data from excel file
+ * Created by U534102 on 2015-12-18.
+ * <p>
+ * Here we're testing with input data from excel file
  */
 @RunWith(DataDrivenTestRunner.class)
 public class DivisorCalculatorTest {

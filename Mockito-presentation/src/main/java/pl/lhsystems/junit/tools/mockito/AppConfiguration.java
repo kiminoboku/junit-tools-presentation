@@ -6,8 +6,7 @@ package pl.lhsystems.junit.tools.mockito;
 public class AppConfiguration {
 
     public String getLanguage() {
-        // here we would have a very complex logic of obtaining configuration parameter
-        // from file, database etc. however this is not implemented yet.
+        // Not implemented yet.
         throw new UnsupportedOperationException("Not implemented yet");
     }
 }
