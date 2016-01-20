@@ -9,12 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>EasyTest-presentation</artifactId>
+    <artifactId>02_Mockito-presentation</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>org.easetech</groupId>
-            <artifactId>easytest-core</artifactId>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
         </dependency>
     </dependencies>
 </project>

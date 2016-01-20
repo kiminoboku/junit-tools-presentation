@@ -9,12 +9,5 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>JUnitParams-presentation</artifactId>
-
-    <dependencies>
-        <dependency>
-            <groupId>pl.pragmatists</groupId>
-            <artifactId>JUnitParams</artifactId>
-        </dependency>
-    </dependencies>
+    <artifactId>01_Hamcrest-presentation</artifactId>
 </project>

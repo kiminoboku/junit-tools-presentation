@@ -9,13 +9,21 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>JUnitParams-presentation</module>
-        <module>Hamcrest-presentation</module>
-        <module>Mockito-presentation</module>
-        <module>EasyTest-presentation</module>
+        <module>01_Hamcrest-presentation</module>
+        <module>02_Mockito-presentation</module>
+        <module>03_JUnitParams-presentation</module>
+        <module>04_EasyTest-presentation</module>
+        <module>05_CatchException-presentation</module>
+        <!--<module>Awaitility</module>-->
+        <!--<module>Tempus-fugit</module>-->
         <module>JaCoCo-presentation</module>
         <module>Pitest-presentation</module>
-        <module>CatchException-presentation</module>
+        <!--
+
+        Honorable mentions
+        1. PowerMock
+        2. BDD
+        -->
     </modules>
 
     <!--Included in every submodule-->
