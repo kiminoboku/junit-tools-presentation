@@ -16,11 +16,10 @@
         <module>05_CatchException-presentation</module>
         <!--<module>Awaitility</module>-->
         <!--<module>Tempus-fugit</module>-->
-        <module>JaCoCo-presentation</module>
-        <module>Pitest-presentation</module>
+        <module>08_JaCoCo-presentation</module>
+        <module>09_Pitest-presentation</module>
         <!--
-
-        Honorable mentions
+        TODO: (or at least think about)
         1. PowerMock
         2. BDD
         -->
