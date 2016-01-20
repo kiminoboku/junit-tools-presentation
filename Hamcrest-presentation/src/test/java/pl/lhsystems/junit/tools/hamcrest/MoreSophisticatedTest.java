@@ -13,38 +13,53 @@ import static org.junit.Assert.assertThat;
 public class MoreSophisticatedTest {
 
     @Test
-    public void testOurCarString() {
-        //Somewhat definition of a car
-        String carString = "hood with engine and 4 wheels, ending with trunk";
+    public void checkIfStringIsNotNull() {
+        String emptyString = "";
 
-        //you can check if object is not null
-        assertThat(carString, is(notNullValue()));
-
-        //you can check car conditions with separate assertions
-        assertThat(carString, startsWith("hood"));
-        assertThat(carString, containsString("engine"));
-        assertThat(carString, containsString("4 wheels"));
-        assertThat(carString, endsWith("trunk"));
-
-        //on the other hand you can check all conditions at once
-        assertThat(carString, allOf(startsWith("hood"), containsString("engine"), containsString("4 wheels"),
-                endsWith("trunk")));
-
-        //sometimes car ends either with truck or a trailer
-        assertThat(carString, anyOf(endsWith("trunk"), endsWith("trailer")));
-        assertThat(carString, either(endsWith("trunk")).or(endsWith("trailer")));
-
-        //it may even end with something else
-        assertThat(carString, either(endsWith("trunk")).or(endsWith("trailer")).or(endsWith("something else")));
-
-        //but it must have both wheels and engine
-        assertThat(carString, both(containsString("4 wheels")).and(containsString("engine")));
-
-        //but unfortunately this is String after all, not any Car object
-        assertThat(carString, both(isA(String.class)).and(is(not(instanceOf(Car.class)))));
+        assertThat(emptyString, is(notNullValue()));
     }
 
-    class Car {
+    @Test
+    public void checkIfStringStartsWithOtherString() {
+        String fooBarBaz = "fooBarBaz";
 
+        assertThat(fooBarBaz, startsWith("foo"));
+    }
+
+    @Test
+    public void checkIfStringContainsOtherString() {
+        String fooBarBaz = "fooBarBaz";
+
+        assertThat(fooBarBaz, containsString("Bar"));
+    }
+
+    @Test
+    public void checkIfStringEndsWithOtherString() {
+        String fooBarBaz = "fooBarBaz";
+
+        assertThat(fooBarBaz, endsWith("Baz"));
+    }
+
+    @Test
+    public void checkFewThingsAtOnce() {
+        String fooBarBaz = "fooBarBaz";
+
+        assertThat(fooBarBaz, allOf(startsWith("f"), containsString("Bar"), endsWith("z")));
+        assertThat(fooBarBaz, both(startsWith("f")).and(containsString("Bar")).and(endsWith("z")));
+    }
+
+    @Test
+    public void checkAnything() {
+        String fooBarBaz = "fooBarBaz";
+
+        assertThat(fooBarBaz, anyOf(startsWith("foo"), startsWith("bar"), startsWith("baz")));
+        assertThat(fooBarBaz, either(startsWith("foo")).or(startsWith("bar")).or(startsWith("baz")));
+    }
+
+    @Test
+    public void checkTypes() {
+        String fooBarBaz = "fooBarBaz";
+
+        assertThat(fooBarBaz, both(isA(String.class)).and(is(not(instanceOf(Exception.class)))));
     }
 }

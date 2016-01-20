@@ -14,20 +14,32 @@ import static org.junit.Assert.*;
 public class BasicTest {
 
     @Test
-    public void equalityTest() {
-        String actual = "someString";
+    public void equalityCheckWithAssertTrueAndAssertEquals() {
+        String actual = "unhappy".substring(2); //happy
 
-        //object equality checks with basic junit assertions
-        assertTrue("someString".equals(actual));
-        assertEquals("someString", actual);
+        assertTrue("happy".equals(actual));
+        assertEquals("happy", actual);
+    }
 
-        //object un-equality checks with basic junit assertions
+    @Test
+    public void inequalityCheckWithAssertFalseAndAssertNotEquals() {
+        String actual = "unhappy".substring(2); //happy
+
         assertFalse("someOtherString".equals(actual));
         assertNotEquals("someOtherString", actual);
+    }
 
-        //same done with hamcrest assertions
-        assertThat(actual, is("someString"));
+    @Test
+    public void equalityCheckWithHamcrest() {
+        String actual = "unhappy".substring(2); //happy
+
+        assertThat(actual, is("happy"));
+    }
+
+    @Test
+    public void inequalityCheckWithHamcrest() {
+        String actual = "unhappy".substring(2); //happy
+
         assertThat(actual, is(not("someOtherString")));
-
     }
 }

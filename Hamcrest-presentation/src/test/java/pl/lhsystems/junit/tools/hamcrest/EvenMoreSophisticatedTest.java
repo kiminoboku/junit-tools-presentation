@@ -37,27 +37,29 @@ public class EvenMoreSophisticatedTest {
     public void useCustomLengthMatcher() {
         String tenDigits = "1234567890";
 
-        /**
-         * You can check if the string matches your custom matcher
-         *
-         * plain English: you can check if "tenDigits" has length 10
-         */
-        assertThat(tenDigits, hasLength(10));
+        assertThat(tenDigits.length(), is(10));
+        assertThat(tenDigits, hasLength(10)); //same with custom matcher
     }
 
     @Test
-    public void testItemsInCollection() {
+    public void checkIfCollectionHasSomeItem() {
         List<String> someList = Arrays.asList("123", "456", "789");
 
-        //you can check if list has some item (checked by equals method)
         assertThat(someList, hasItem("123"));
+        assertThat(someList, both(hasItem("123")).and(hasItem("456")));
+    }
 
-        //you can check if lit has some item matching some given matcher
-        assertThat(someList, hasItem(startsWith("1"))); //123
-        assertThat(someList, hasItem(both(startsWith("4")).and(endsWith("6")))); //456
-        assertThat(someList, hasItem(endsWith("9"))); //789
+    @Test
+    public void checkIfCollectionHasItemMatchingSomeCriteria() {
+        List<String> someList = Arrays.asList("123", "456", "789");
 
-        //you can check every item
+        assertThat(someList, hasItem(both(startsWith("1")).and(endsWith("3")))); //123
+    }
+
+    @Test
+    public void checkIfEveryItemMatchSomeCriteria() {
+        List<String> someList = Arrays.asList("123", "456", "789");
+
         assertThat(someList, everyItem(hasLength(3)));
     }
 }
