@@ -2,54 +2,59 @@ package pl.lhsystems.junit.tools.mockito;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 /**
  * Created by U534102 on 2015-12-17.
- *
+ * <p>
  * Test class presenting most basic Mockito features
  */
 @RunWith(MockitoJUnitRunner.class)
 public class GreeterTest {
 
-    @InjectMocks
-    Greeter systemUnderTest;
-
-    @Mock
-    AppConfiguration appConfiguration;
-
     @Test
-    public void greetShouldInvokeAppConfigurationForLanguage() {
+    public void shouldAskAppConfigurationForLanguage() {
+        //arrange
+        AppConfiguration appConfigurationMock = mock(AppConfiguration.class);
+        Greeter systemUnderTest = new Greeter(appConfigurationMock);
+
+        //action
         systemUnderTest.greet();
 
         //verify that collaborator was invoked
-        verify(appConfiguration).getLanguage();
+        verify(appConfigurationMock).getLanguage();
     }
 
     @Test
-    public void greetShouldReturnPolishGreetWhenAppConfigurationReturnsPolishLanguage() {
-        //return specific result when invoked
-        when(appConfiguration.getLanguage()).thenReturn("pl");
+    public void shouldReturnPolishGreetWhenAppLanguageIsSetToPolish() {
+        //arrange
+        AppConfiguration appConfigurationMock = mock(AppConfiguration.class);
+        when(appConfigurationMock.getLanguage()).thenReturn("pl");
+        Greeter systemUnderTest = new Greeter(appConfigurationMock);
 
+        //action
         String greet = systemUnderTest.greet();
 
+        //verify
         assertThat(greet, is("Witaj"));
     }
 
     @Test
-    public void greetShouldReturnEnglishGreetWhenAppConfigurationReturnsUnrecognizedLanguage() {
+    public void shouldReturnEnglishGreetWhenAppLanguageSetIsUnrecognized() {
+        //arrange
         String anyUnrecognizedLanguage = "NON_EXISTING_LANGUAGE_SHORTCUT";
-        when(appConfiguration.getLanguage()).thenReturn(anyUnrecognizedLanguage);
+        AppConfiguration appConfigurationMock = mock(AppConfiguration.class);
+        when(appConfigurationMock.getLanguage()).thenReturn(anyUnrecognizedLanguage);
+        Greeter systemUnderTest = new Greeter(appConfigurationMock);
 
+        //action
         String greet = systemUnderTest.greet();
 
+        //verify
         assertThat(greet, is("Welcome"));
     }
 

@@ -25,8 +25,8 @@ public class CalculatorWithJUnitParamsMethodTest {
      * @param expectedSum expected sum of addends
      */
     @Test
-    @Parameters(method = "getAddendsWithProperSums")
-    public void addShouldReturnSumOfBothAddends(int addend1, int addend2, int expectedSum) {
+    @Parameters(method = "getAddendsWithTheirSums")
+    public void shouldReturnSumOfBothAddends(int addend1, int addend2, int expectedSum) {
         Calculator systemUnderTest = new Calculator();
 
         int sum = systemUnderTest.add(addend1, addend2);
@@ -34,7 +34,7 @@ public class CalculatorWithJUnitParamsMethodTest {
         assertThat(sum, is(expectedSum));
     }
 
-    public Object[] getAddendsWithProperSums() {
+    public Object[] getAddendsWithTheirSums() {
         return $(
                 $(1, 2, 3), //1 + 2 = 3
                 $(2, 3, 5), //2 + 3 = 5

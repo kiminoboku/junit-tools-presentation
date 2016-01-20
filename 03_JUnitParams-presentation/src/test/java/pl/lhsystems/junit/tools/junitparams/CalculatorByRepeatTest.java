@@ -16,26 +16,32 @@ public class CalculatorByRepeatTest {
      * Just a "plain" single test with one input
      */
     @Test
-    public void addShouldReturnSumOfBothAddends() {
+    public void shouldReturnSumOfBothAddends() {
+        //arrange
         Calculator systemUnderTest = new Calculator();
 
+        //action
         int sum = systemUnderTest.add(1, 2);
 
+        //verify
         assertThat(sum, is(3));
     }
 
     /**
      * Here we're testing same method twice by repeating the same code with different parameters
+     *
+     * How can this be improved?
      */
     @Test
-    public void addShouldReturnSumOfBothAddends_Multiple() {
+    public void shouldReturnSumOfBothAddends_Multiple() {
+        //arrange
         Calculator systemUnderTest = new Calculator();
 
-        //first test
+        //action, verify - first test
         int sum = systemUnderTest.add(1, 2);
         assertThat(sum, is(3));
 
-        //second test (DRY!)
+        //action, verify - second test (DRY!)
         sum = systemUnderTest.add(2, 3);
         assertThat(sum, is(5));
     }

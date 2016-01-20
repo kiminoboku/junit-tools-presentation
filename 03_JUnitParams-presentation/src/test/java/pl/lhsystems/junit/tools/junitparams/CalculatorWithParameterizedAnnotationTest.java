@@ -51,7 +51,7 @@ public class CalculatorWithParameterizedAnnotationTest {
      * Test looks nice but at what cost?
      */
     @Test
-    public void addShouldReturnSumOfBothAddends() {
+    public void shouldReturnSumOfBothAddends() {
         Calculator systemUnderTest = new Calculator();
 
         int sum = systemUnderTest.add(addend1, addend2);
