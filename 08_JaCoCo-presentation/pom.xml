@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>JaCoCo-presentation</artifactId>
+    <artifactId>08_JaCoCo-presentation</artifactId>
 
     <dependencies>
         <dependency>

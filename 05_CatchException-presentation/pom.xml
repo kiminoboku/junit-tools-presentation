@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>CatchException-presentation</artifactId>
+    <artifactId>05_CatchException-presentation</artifactId>
 
     <dependencies>
         <dependency>
