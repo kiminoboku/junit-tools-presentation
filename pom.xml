@@ -14,16 +14,25 @@
         <module>03_JUnitParams-presentation</module>
         <module>04_EasyTest-presentation</module>
         <module>05_CatchException-presentation</module>
-        <!--<module>Awaitility</module>-->
-        <!--<module>Tempus-fugit</module>-->
+        <module>06_Awaitility</module>
+        <module>07_TempusFugit</module>
         <module>08_JaCoCo-presentation</module>
         <module>09_Pitest-presentation</module>
-        <!--
-        TODO: (or at least think about)
-        1. PowerMock
-        2. BDD
-        -->
     </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <!--Included in every submodule-->
     <dependencies>
@@ -74,6 +83,18 @@
                 <groupId>com.googlecode.catch-exception</groupId>
                 <artifactId>catch-exception</artifactId>
                 <version>1.2.0</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.jayway.awaitility</groupId>
+                <artifactId>awaitility</artifactId>
+                <version>1.7.0</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.tempus-fugit</groupId>
+                <artifactId>tempus-fugit</artifactId>
+                <version>1.1</version>
                 <scope>test</scope>
             </dependency>
 
