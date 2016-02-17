@@ -24,7 +24,6 @@ public class EvenMoreSophisticatedTest {
      * @return string matcher checking for given string length
      */
     public static Matcher<String> hasLength(final int length) {
-        //We return type safe matcher that complies to java 1.5 generics
         return new CustomTypeSafeMatcher<String>("has length " + length) {
             @Override
             protected boolean matchesSafely(String s) {
@@ -38,7 +37,7 @@ public class EvenMoreSophisticatedTest {
         String tenDigits = "1234567890";
 
         assertThat(tenDigits.length(), is(10));
-        assertThat(tenDigits, hasLength(10)); //same with custom matcher
+        assertThat(tenDigits, hasLength(10)); //same as above with custom matcher
     }
 
     @Test

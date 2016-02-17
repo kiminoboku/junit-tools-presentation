@@ -29,7 +29,7 @@ public class FireProtectionControllerTryCatchTest {
     FireExtinguisher fireExtinguisher;
 
     @Test
-    public void checkForFireShouldThrowFireExceptionWhenSmokeDetectorThrowsException() {
+    public void shouldThrowFireExceptionWhenSmokeIsDetected() {
         //make sure that collaborator throws an exception
         when(smokeDetector.checkForSmoke()).thenThrow(new IllegalStateException());
 
@@ -43,7 +43,7 @@ public class FireProtectionControllerTryCatchTest {
     }
 
     @Test
-    public void checkForFireShouldThrowFireExceptionWithProperMessage() {
+    public void shouldThrowFireExceptionWithProperMessage() {
         when(smokeDetector.checkForSmoke()).thenThrow(new IllegalStateException());
 
         try {
@@ -54,7 +54,7 @@ public class FireProtectionControllerTryCatchTest {
     }
 
     @Test
-    public void checkForFireShouldEnableFireExtinguisherWhenSmokeDetectorThrowsException() {
+    public void shouldEnableFireExtinguisherWhenSmokeIsDetected() {
         when(smokeDetector.checkForSmoke()).thenThrow(new IllegalStateException());
 
         try {

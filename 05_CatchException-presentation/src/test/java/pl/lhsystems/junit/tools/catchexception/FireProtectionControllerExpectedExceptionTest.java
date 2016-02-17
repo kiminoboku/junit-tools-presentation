@@ -22,23 +22,26 @@ public class FireProtectionControllerExpectedExceptionTest {
     /** Special field for adding exception expectations */
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
+
     @InjectMocks
     FireProtectionController systemUnderTest;
+
     @Mock
     SmokeDetector smokeDetector;
+
     @Mock
     FireExtinguisher fireExtinguisher;
 
     //We can just add some expected exception type to @Test annotation
     @Test(expected = FireException.class)
-    public void checkForFireShouldThrowFireExceptionWhenSmokeDetectorThrowsException() throws FireException {
+    public void shouldThrowFireExceptionWhenSmokeIsDetected() throws FireException {
         when(smokeDetector.checkForSmoke()).thenThrow(new IllegalStateException());
 
         systemUnderTest.checkForFire();
     }
 
     @Test
-    public void checkForFireShouldThrowFireExceptionWithProperMessage() throws FireException {
+    public void shouldThrowFireExceptionWithProperMessage() throws FireException {
         when(smokeDetector.checkForSmoke()).thenThrow(new IllegalStateException());
 
         //we can expect some particular message
@@ -52,7 +55,7 @@ public class FireProtectionControllerExpectedExceptionTest {
      * have to use plain old try-catch here.
      */
     @Test
-    public void checkForFireShouldEnableFireExtinguisherWhenSmokeDetectorThrowsException() {
+    public void shouldEnableFireExtinguisherWhenSmokeIsDetected() {
         when(smokeDetector.checkForSmoke()).thenThrow(new IllegalStateException());
 
         try {

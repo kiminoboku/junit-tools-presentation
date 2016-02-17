@@ -30,14 +30,16 @@ public class PostOfficeTest {
 
     @Test
     public void shouldNotifyThatMailWasSent_TestUsingLoop() throws InterruptedException {
+        //arrange
         String anyMail = "ANY_MAIL";
         MailSentListener mailSentListenerMock = mock(MailSentListener.class);
         PostOffice systemUnderTest = new PostOffice(mailSentListenerMock);
         boolean mailSentInvoked = false;
 
+        //action
         systemUnderTest.sendMail(anyMail);
 
-
+        //verify
         for (int i = 0; i < 100; ++i) {
             try {
                 verify(mailSentListenerMock).mailSent(anyString());
@@ -48,7 +50,6 @@ public class PostOfficeTest {
             }
             TimeUnit.MILLISECONDS.sleep(50);
         }
-
         assertTrue(mailSentInvoked);
     }
 

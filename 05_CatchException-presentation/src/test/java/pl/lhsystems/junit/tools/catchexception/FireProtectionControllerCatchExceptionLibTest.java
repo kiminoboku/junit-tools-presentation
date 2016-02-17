@@ -38,7 +38,7 @@ public class FireProtectionControllerCatchExceptionLibTest {
      * @throws FireException
      */
     @Test
-    public void checkForFireShouldThrowFireExceptionWhenSmokeDetectorThrowsException() throws FireException {
+    public void shouldThrowFireExceptionWhenSmokeIsDetected() throws FireException {
         when(smokeDetector.checkForSmoke()).thenThrow(new IllegalStateException());
 
         catchException(systemUnderTest).checkForFire();
@@ -52,7 +52,7 @@ public class FireProtectionControllerCatchExceptionLibTest {
      * @throws FireException
      */
     @Test
-    public void checkForFireShouldThrowFireExceptionWithProperMessage() throws FireException {
+    public void shouldThrowFireExceptionWithProperMessage() throws FireException {
         when(smokeDetector.checkForSmoke()).thenThrow(new IllegalStateException());
 
         catchException(systemUnderTest).checkForFire();
@@ -68,7 +68,7 @@ public class FireProtectionControllerCatchExceptionLibTest {
      * @throws FireException
      */
     @Test
-    public void checkForFireShouldEnableFireExtinguisherWhenSmokeDetectorThrowsException() throws FireException {
+    public void shouldEnableFireExtinguisherWhenSmokeIsDetected() throws FireException {
         when(smokeDetector.checkForSmoke()).thenThrow(new IllegalStateException());
 
         catchException(systemUnderTest).checkForFire();
