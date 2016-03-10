@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 public class SerialKeyGenerator {
     AtomicLong key = new AtomicLong();
-    long key2 = 0L;
+//    long key2 = 0L;
 
     public long nextKey() {
         return key.incrementAndGet();
