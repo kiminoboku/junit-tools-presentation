@@ -48,6 +48,7 @@ public class FireProtectionControllerTryCatchTest {
 
         try {
             systemUnderTest.checkForFire();
+            fail("Missing exception");
         } catch (Exception e) {
             assertThat(e.getMessage(), is("Fire!"));
         }
@@ -59,6 +60,7 @@ public class FireProtectionControllerTryCatchTest {
 
         try {
             systemUnderTest.checkForFire();
+            fail("Missing exception");
         } catch (Exception e) {
             //We don't care about exception here, not part of this test
         }

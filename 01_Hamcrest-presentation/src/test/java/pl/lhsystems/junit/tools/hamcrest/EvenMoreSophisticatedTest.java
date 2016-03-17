@@ -37,7 +37,7 @@ public class EvenMoreSophisticatedTest {
         String tenDigits = "1234567890";
 
         assertThat(tenDigits.length(), is(10));
-        assertThat(tenDigits, hasLength(10)); //same as above with custom matcher
+        assertThat(tenDigits, hasLength(10)); //same as above but with custom matcher
     }
 
     @Test
