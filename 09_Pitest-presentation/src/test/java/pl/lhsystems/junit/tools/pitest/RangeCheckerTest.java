@@ -17,7 +17,7 @@ public class RangeCheckerTest {
     RangeChecker systemUnderTest = new RangeChecker();
 
     @Test
-    @Parameters({"1|false", "3|true"})
+    @Parameters({"1|false", /*"2|true",*/  "3|true"})
     public void shouldCheckIfNumberIsGreaterThanOrEqualTwo(int checkedNumber, boolean expectedResult) {
         boolean result = systemUnderTest.isNumberGreaterThanOrEqualTwo(checkedNumber);
 

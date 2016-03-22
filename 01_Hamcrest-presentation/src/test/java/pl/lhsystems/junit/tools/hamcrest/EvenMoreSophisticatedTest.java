@@ -23,7 +23,7 @@ public class EvenMoreSophisticatedTest {
      * @param length length to be checked
      * @return string matcher checking for given string length
      */
-    public static Matcher<String> hasLength(final int length) {
+    public static Matcher<String> hasLengthOf(final int length) {
         return new CustomTypeSafeMatcher<String>("has length " + length) {
             @Override
             protected boolean matchesSafely(String s) {
@@ -37,7 +37,7 @@ public class EvenMoreSophisticatedTest {
         String tenDigits = "1234567890";
 
         assertThat(tenDigits.length(), is(10));
-        assertThat(tenDigits, hasLength(10)); //same as above but with custom matcher
+        assertThat(tenDigits, hasLengthOf(10)); //same as above but with custom matcher
     }
 
     @Test
@@ -59,6 +59,6 @@ public class EvenMoreSophisticatedTest {
     public void checkIfEveryItemMatchSomeCriteria() {
         List<String> someList = Arrays.asList("123", "456", "789");
 
-        assertThat(someList, everyItem(hasLength(3)));
+        assertThat(someList, everyItem(hasLengthOf(3)));
     }
 }
